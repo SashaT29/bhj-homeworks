@@ -1,6 +1,7 @@
 const links = Array.from(document.querySelectorAll('.menu__link'));
 const menuSub = Array.from(document.querySelectorAll('.menu_sub'));
 
+
 links.forEach((link) => {
     link.onclick = () => {
         if (link.parentElement.querySelector('.menu_sub') !== null) {
