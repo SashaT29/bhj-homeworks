@@ -18,7 +18,7 @@ button.addEventListener("click", ev => {
     xhr.setRequestHeader("Content-Type", "application/json");
 
     xhr.onload = function () {
-        if (xhr.status >= 200 && xhr.status < 300) {
+        if (xhr) {
             const response = JSON.parse(xhr.responseText);
             
             if (response.success) {
@@ -31,6 +31,9 @@ button.addEventListener("click", ev => {
         } else {
             alert("Авторизация не удалась");
         }
+
+    form.reset();
+
     };
     
     xhr.send(JSON.stringify(loginData));
