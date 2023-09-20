@@ -1,4 +1,7 @@
-const texrArea = document.getElementById('editor');
+const editor = document.getElementById('editor');
 
-texrArea.value = localStorage.text;
-texrArea.oninput = () => localStorage.text = texrArea.value;
+editor.value = localStorage.getItem('editor.value');
+
+editor.addEventListener('input', () => {
+    localStorage.setItem('editor.value', editor.value);
+});
