@@ -18,8 +18,7 @@ button.addEventListener("click", ev => {
     xhr.setRequestHeader("Content-Type", "application/json");
 
     xhr.onload = function () {
-        if (xhr) {
-            const response = JSON.parse(xhr.responseText);
+         const response = JSON.parse(xhr.responseText);
             
             if (response.success) {
                 const userId = response.user_id;
@@ -28,16 +27,11 @@ button.addEventListener("click", ev => {
             } else {
                  alert("Неверный логин/пароль");
             }
-        } else {
-            alert("Авторизация не удалась");
-        }
-
-    form.reset();
-
-    };
-    
-    xhr.send(JSON.stringify(loginData));
-});
+         form.reset();   
+        } 
+        
+        xhr.send(JSON.stringify(loginData));
+    });
 
 function authorizeUser(userId) {
     user.textContent = userId;
